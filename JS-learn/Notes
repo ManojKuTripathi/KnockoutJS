@@ -1,0 +1,100 @@
+
+npm config set proxy pproxy.cognizant.com:4050
+npm config set strict-ssl false
+
+npm install -g live-server
+
+---------------------------------------------
+
+
+when we load .js into JS envi ,
+
+browser will create 'global execution context'
+
+ 'window' <=== this
+ 
+ all global var and functions will become properties of
+ global-obj when in creation-phase
+ with default value 'undefined'
+
+-------------------------------------------
+ 
+ 
+ JS - var hoisting is default featute i.1 lifting var dec to top
+ 
+ every func invocation ,
+ will create one new 'execution-context' which is child of existing
+ 
+ -------------------------------------------------
+ 
+ JS concepts
+ ----------
+ 
+ this
+ closure(s)
+ inheritance
+ 
+ --------------------------------------------------
+ 
+ 
+ JS is used in browser-envi to bring any interactivity to HTML page
+ on user/browser events.
+ 
+ JS brings any functionality to web-page by using Web APIs
+ 
+ 
+ JS             HTML
+    <--------->
+      Web APIs   ----------> provided by 'browsers' based on w3c standards
+
+
+using DOM APIs
+
+--> can create/retreive/update/delete HTML elements      
+--> can change element's style
+--> can change eleemnt's attributes values
+--> can change text content of any elemet
+--> can create RICH UI components
+
+
+using XHR API ( AJAX )
+
+--> communicate with server asyc , update results in existing page
+
+using Timer API
+
+--> time func
+
+some HTML5 Web APIS
+
+-> canvas
+-> audio/video
+-> localStorage
+-> geo
+-> web sockets
+-> WebGL
+
+-------------------------------
+
+
+
+JS
+----
+
+--> single-threaded programming lang.
+
+    how to acheive concurrency ?
+    
+    
+browser e.g chrome
+--------------------
+
+a. JS engine/runtime ( V8 )
+
+   call-stack
+   heap
+   
+b. callback-queue
+c. Event-Loop
+d. Web APIs
+       
