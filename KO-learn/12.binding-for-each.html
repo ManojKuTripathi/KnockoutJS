@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">     
+    </head>
+    <body class="container">
+        
+            
+           <div class="page-header"> KO learning -sample </div>
+           
+           <table class="table table-bordered table-condensed table-hover">
+               <tbody  data-bind="foreach:products">
+               <tr>
+                   <td data-bind="text:$index"></td>
+                   <td data-bind="text:name"></td>
+                   <td data-bind="text:price"></td>
+                   <td data-bind="text:desc"></td>
+               </tr>
+               </tbody>
+           </table>
+           
+           
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script>
+               
+            var ViewModel = function() {
+            this.products=[
+                {name:'Laptop',price:2000,desc:'New Model'},
+                {name:'Mobile',price:4000,desc:'Old Model'},
+                {name:'Laptop',price:2000,desc:'New Model'}
+            ]
+            }
+            
+            var vm=new ViewModel();
+            
+            ko.applyBindings(vm);
+               
+           </script>
+         
+              
+    </body>
+</html>

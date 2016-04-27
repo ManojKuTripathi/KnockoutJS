@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">     
+    </head>
+    <body class="container">
+        
+            
+            <div class="page-header"> KO learning -sample </div>
+           
+            <form data-bind="submit:addNewCourse">
+                New course:
+                <input data-bind='value:newCourse,valueUpdate:"afterkeydown"'/>
+                <button class="btn btn-primary" type="submit" data-bind="enable: newCourse().length > 0">Add</button>
+                <hr/>
+                <p>Courses list:</p>
+                <select data-bind="options:courses" multiple style="width:500px"></select>
+            </form>
+            <h3>There are <span data-bind="text:courses().length"></span> courses in the list!</h3>
+         
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script src="js/3.js"></script>
+         
+              
+    </body>
+</html>

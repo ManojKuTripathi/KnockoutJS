@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">     
+    </head>
+    <body class="container">
+        
+            
+            <div class="page-header"> KO learning -sample </div>
+           
+           
+           <input type="checkbox" data-bind="checked: showMessage" />
+	       <div class="jumbotron" data-bind="visible:showMessage">
+               Welcome to KO
+	       </div>      
+           
+           
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script>
+               
+            var myViewModel = function() {
+            this.showMessage = ko.observable(false);
+            };
+        
+            ko.applyBindings(new myViewModel());
+               
+           </script>
+         
+              
+    </body>
+</html>
