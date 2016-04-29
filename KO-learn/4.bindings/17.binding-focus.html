@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        
+    </head>
+    <body class="container">
+        
+            
+           <div class="page-header"> KO learning -sample </div>
+           
+            Preferred JavaScript Library:
+            <b data-bind="visible:!editing(), text:library, click:edit">&nbsp;</b>
+            <input data-bind="visible:editing, value:library, hasFocus:editing" />
+               
+           
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script>
+           
+           function libViewModel(lib) {
+                this.library = ko.observable(lib),
+                this.editing = ko.observable(false),
+                this.edit = function () {
+                    this.editing(true);
+                }
+            }
+            ko.applyBindings(new libViewModel("jQuery"));
+               
+           </script>
+         
+              
+    </body>
+</html>

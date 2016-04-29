@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">    
+        <style type="text/css">
+        .pub th {
+            font-family: Verdana; 
+            font-size: large; 
+            text-transform: uppercase; 
+            background-color: #3399FF; 
+            padding: 3px; 
+            margin: 3px
+        }
+        a {
+            font-family: Verdana;
+            font-size: x-small;
+            text-decoration: none;
+        }
+        </style> 
+    </head>
+    <body class="container">
+        
+            
+           <div class="page-header"> KO - sample appln </div>
+           
+         
+            <h2>Publishers</h2>
+            <div id='pubsList'>
+                <table class='table table-bordered table-condensed'>
+                   <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Books</th>
+                    </tr>
+                   </thead>
+                    <tbody data-bind="foreach: publishers">
+                     <tr>
+                        <td>
+                            <input data-bind='value: name' />
+                            <div><a href='#' data-bind='click: $root.removePub'>Delete Pub</a></div>
+                        </td>
+                        <td>
+                            <table class="table table-bordered table-condensed">
+                               <thead>
+                                 <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Price</th>
+                                </tr>
+                               </thead>
+                                <tbody data-bind="foreach: books">
+                                    <tr>
+                                        <td>
+                                            <input data-bind='value: title' /></td>
+                                        <td>
+                                            <input data-bind='value: author' /></td>
+                                        <td>
+                                            <input data-bind='value: price' /></td>
+                                        <td><a href='#' data-bind='click: $root.removeBook'>Delete Book</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href='#' data-bind='click: $root.addBook'>Add Book</a>
+                        </td>
+                     </tr>  
+                    </tbody>    
+                </table>
+            </div>    
+            
+             <p>
+                <button data-bind='click: addPub'>Add Pub</button>
+                <button data-bind='click: save, enable: publishers().length > 0'>Save to JSON</button>
+            </p>
+
+            <textarea data-bind='value: pubJSON' rows='5' cols='60' disabled='disabled'> </textarea>
+            
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           <script src="js/sample-app.js"></script>
+           
+           
+              
+    </body>
+</html>

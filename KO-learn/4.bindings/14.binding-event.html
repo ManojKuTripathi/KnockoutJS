@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body class="container">
+        
+            
+           <div class="page-header"> KO learning -sample </div>
+           
+            <div data-bind="event:{mouseover:showDefinition,mouseout:hideDefinition}" class="badge">
+             what is knockout? 
+            </div>
+            
+            <div id="definition" class="jumbotron" data-bind="visible:definitionEnabled"> 
+            KO-Simplify dynamic JavaScript UIs with the Model-View-View Model (MVVM)
+            </div>
+           
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script>
+               
+            var viewModel = {
+				definitionEnabled: ko.observable(false),
+				showDefinition: function() {
+					this.definitionEnabled(true);
+				},
+				hideDefinition: function() {
+					this.definitionEnabled(false);
+				}
+			};
+			
+			ko.applyBindings(viewModel);
+               
+           </script>
+         
+              
+    </body>
+</html>

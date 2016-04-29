@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>app</title>
+        <link rel="stylesheet" href="css/bootstrap.css">   
+        
+        <style type="text/css">
+            #main {
+                width: 50px;
+                height: 50px;
+                background-color: yellow;
+                color: black;
+                font: bold xx-large arial;
+                text-align: center;
+                vertical-align: middle;
+            }
+        </style>
+          
+    </head>
+    <body class="container">
+        
+            
+           <div class="page-header"> KO learning -sample </div>
+           
+           
+           <div id="main" data-bind="visible:counter()<=10">
+               <span data-bind="text:counter"></span>
+           </div>    
+           <hr/>
+           <div>
+               <button type="button" 
+                       class="btn btn-danger" 
+                       data-bind="click:incrementCounter,disable:counter()>=10">
+               Hit Me
+               </button>
+           </div>
+          
+           
+           <script src="js/lib/jquery-2.2.0.js"></script> 
+           <script src="js/lib/knockout-3.4.0.js"></script> 
+           
+           <script>
+               
+            var viewModel = {
+				counter: ko.observable(0),
+				incrementCounter: function() {
+					var previousCounter = this.counter();
+					this.counter(previousCounter + 1);
+				}
+			};
+			
+			ko.applyBindings(viewModel);
+               
+           </script>
+         
+              
+    </body>
+</html>
