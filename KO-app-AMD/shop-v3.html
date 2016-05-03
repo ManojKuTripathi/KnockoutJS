@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body class="container">
+
+	<div class="page-header">ShopIT</div>
+	
+	
+	
+	<div class="list-group">
+		
+		<div class="list-group" data-bind="template:{foreach:products}">
+			<product-widget params={name:name,price:price,desc:description}></product-widget>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="js/lib/jquery-2.2.0.js"></script>
+	
+	<!-- 	AMD Loader -->
+	<script type="text/javascript" src="require.js"></script>
+
+	<script type="text/javascript" src="js/init.js"></script>
+
+</body>
+</html>
